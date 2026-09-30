@@ -6,17 +6,16 @@ multilingual = false
 src = "manuscript/markdown"
 
 [build]
-build-dir = "gh-pages"
+build-dir = "book"
 create-missing = true
 
-[output.html]
-additional-css = ["assets/stylesheets/output-html.css"]
-smart-punctuation = true
-footnote-backrefs = true
+[output.epub]
+additional-css = ["assets/stylesheets/output-epub.css"]
+epub-version = 3
+use-default-css = false
 no-section-label = true
-site-url = ""
-
-[output.html.fold]
-enable = true
-level = 2
-
+footnote-backrefs = true
+curly-quotes = true
+cover-image = "desktop-cover.jpg"
+additional-resources = []
+# additional-resources = ["assets/fonts/NunitoSansX-Regular.ttf", "assets/fonts/NunitoSansX-Italic.ttf", "assets/fonts/NunitoSansX-Bold.ttf", "assets/fonts/OpenSansX-Regular.ttf"]

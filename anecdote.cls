@@ -44,7 +44,7 @@
 
 \pgfkeys{
   /BOOK/.cd,
-  babelLanguage/.default=british,
+  babelLanguage/.default=american,
   babelLanguage/.store in=\BOOK@babelLanguage,
   desktopVersion/.code=\desktopversiontrue,
   overleaf/.code=\overleaftrue,
@@ -93,7 +93,7 @@
 
 % \ifoverleaf\relax
 % \else
-% 
+%
 % \immediate\pdfobj stream attr{/N 4} file{assets/other/UncoatedFOGRA29.icc}
 % \pdfcatalog{%
 %   /OutputIntents [ <<
@@ -105,7 +105,7 @@
 %   /RegistryName (http://www.color.org/)
 %   >> ]
 % }
-% 
+%
 % \fi
 
 % === Book Core ===
@@ -172,10 +172,10 @@
 \setmainfont[
   SmallCapsFont = Crimson-Roman.otf,
   SmallCapsFeatures= { Ligatures = TeX, Letters = SmallCaps, Scale = 0.8, LetterSpace = 0.2 },
-  ItalicFont = Gentium-Italic.ttf,
-  BoldFont = Gentium-Bold.ttf,
-  BoldItalicFont = Gentium-BoldItalic.ttf,
-]{Gentium-Regular.ttf}
+  ItalicFont = GentiumBookPlus-Italic.ttf,
+  BoldFont = GentiumBookPlus-Bold.ttf,
+  BoldItalicFont = GentiumBookPlus-BoldItalic.ttf,
+]{GentiumBookPlus-Regular.ttf}
 
 \newfontfamily\crimsonRomanFont[
   SmallCapsFeatures= { LetterSpace = 0.2 },
@@ -188,10 +188,10 @@
 ]{Crimson-Roman.otf}
 
 \newfontfamily\gentiumFont[
-  ItalicFont = Gentium-Italic.ttf,
-  BoldFont = Gentium-Bold.ttf,
-  BoldItalicFont = Gentium-BoldItalic.ttf,
-]{Gentium-Regular.ttf}
+  ItalicFont = GentiumBookPlus-Italic.ttf,
+  BoldFont = GentiumBookPlus-Bold.ttf,
+  BoldItalicFont = GentiumBookPlus-BoldItalic.ttf,
+]{GentiumBookPlus-Regular.ttf}
 
 % header and footer
 
@@ -336,7 +336,9 @@
 % === common hyphenation exceptions and corrections ===
 
 \hyphenation{season wisdom develop-ment respon-sible pheno-mena
-philo-sophical munindo amaravati thai-land}
+philo-sophical munindo amaravati thai-land com-passion ag-gre-gates
+brahma-vihāras straight-forwardness Karuṇa-dhammo Abhaya-giri ig-nor-ance
+re-sul-tant un-created de-te-reio-rat-ing recol-lections}
 
 %\hyphenation{accur-ately argu-men-ta-tive attach Ayu-dhaya becomes
 %ben-e-fi-cial capa-bil-ity car-ry car-ry-ing cere-monies cere-mony
@@ -885,10 +887,10 @@ philo-sophical munindo amaravati thai-land}
   \hspace{6pt}%
 }
 \makepagestyle{topbottomcentered}
-\makeevenhead{topbottomcentered}{}{\headerFont\headerSize\color{header}\textit{\thetitle}}{}
-\makeevenfoot{topbottomcentered}{}{\footerFont\footerSize\color{footer}\thepage}{}
-\makeoddhead{topbottomcentered}{}{\headerFont\headerSize\color{header}\textit{\leftmark}}{}
-\makeoddfoot{topbottomcentered}{}{\footerFont\footerSize\color{footer}\thepage}{}
+\makeevenhead{topbottomcentered}{\headerFont\headerSize\color{header}\thepage}{\headerFont\headerSize\color{header}\textit{\thetitle}}{}
+\makeevenfoot{topbottomcentered}{}{}{}
+\makeoddhead{topbottomcentered}{}{\headerFont\headerSize\color{header}\textit{\leftmark}}{\headerFont\headerSize\color{header}\thepage}
+\makeoddfoot{topbottomcentered}{}{}{}
 \makepsmarks{topbottomcentered}{%
   \nouppercaseheads
   \createmark{chapter}{left}{nonumber}{}{}
@@ -915,19 +917,35 @@ philo-sophical munindo amaravati thai-land}
   \textit{\leftmark}\hspace*{1em}$\cdot$\hspace*{1em}\thepage%
 }
 
+\makepagestyle{foreword}
+\makeevenhead{foreword}{}{}{}
+\makeevenfoot{foreword}{}{%
+  \footerFont\footerSize%
+  \color{footer}%
+  \thepage%
+}{}
+% \makeevenfoot{foreword}{}{%
+%   \footerFont\footerSize%
+%   \color{footer}%
+%   \thepage%
+% }{}
+\makeoddhead{foreword}{}{}{}
+\makeoddfoot{foreword}{}{%
+  \footerFont\footerSize%
+  \color{footer}%
+  \thepage%
+}{}
+
 \makepagestyle{bottomcenter}
 \makeevenhead{bottomcenter}{}{}{}
-\makeevenfoot{bottomcenter}{}{%
-  \footerFont\footerSize%
-  \color{footer}%
-  \thepage%
-}{}
+\makeevenfoot{bottomcenter}{}{}{}
+% \makeevenfoot{bottomcenter}{}{%
+%   \footerFont\footerSize%
+%   \color{footer}%
+%   \thepage%
+% }{}
 \makeoddhead{bottomcenter}{}{}{}
-\makeoddfoot{bottomcenter}{}{%
-  \footerFont\footerSize%
-  \color{footer}%
-  \thepage%
-}{}
+\makeoddfoot{bottomcenter}{}{}{}
 
 % alias the pagestyles into semantic names, "where it is used"
 
@@ -1007,11 +1025,30 @@ philo-sophical munindo amaravati thai-land}
 {}
 
 \titlecontents{chapter}[\tocLeftWidth]
-{\addvspace{15pt}\fontsize{13}{13}\gentiumFont\selectfont}%
-{\contentsmargin{0pt}}
-{\contentsmargin{0pt}%
-\itshape}
-{\hfill\normalsize\tocFont\thecontentspage}
+  {\addvspace{10pt}\fontsize{13}{13}\gentiumFont\selectfont}
+  {% Numbered chapters: Open top-aligned box restricted to (width - 4em)
+   \vtop\bgroup\hsize=\dimexpr\linewidth-\tocLeftWidth-4em\relax\raggedright
+  }
+  {% Unnumbered chapters: Open top-aligned box restricted to (width - 4em)
+   \vtop\bgroup\hsize=\dimexpr\linewidth-\tocLeftWidth-4em\relax\raggedright%\itshape
+  }
+  {% Filler & Page Number: Close the \vtop, then push page number on line 1
+   \egroup\hfill\normalsize\tocFont\thecontentspage
+  }
+  []
+
+% \titlecontents{chapter}[\tocLeftWidth]
+% {\addvspace{10pt}\fontsize{13}{13}\gentiumFont\selectfont\contentsmargin{4em}}
+% {\contentsmargin{4em}}%
+% {\contentsmargin{4em}\itshape}%
+% {\hfill\normalsize\tocFont\thecontentspage}%
+% {}%
+
+% Alternative/Old Styling:
+% {\addvspace{15pt}\fontsize{13}{13}\gentiumFont\selectfont}%
+% {\contentsmargin{0pt}}%
+% {\contentsmargin{0pt}\itshape}%
+% {\hfill\normalsize\tocFont\thecontentspage}%
 
 \titlecontents{appendix}[\tocLeftWidth]
 {\addvspace{30pt}\fontsize{13}{13}\crimsonRomanFont\bfseries\selectfont}%
@@ -1143,37 +1180,38 @@ philo-sophical munindo amaravati thai-land}
 \makechapterstyle{lowtitle}{
   \chapterstyle{default}
   \setlength{\beforechapskip}{30mm}
-  \setlength{\chapterTitleLeftSkip}{17pt}
+  \setlength{\chapterTitleLeftSkip}{0pt} % Set to 0pt for full-width centering
   \renewcommand\printchaptername{}
   \renewcommand\chapternamenum{}
   \renewcommand\chapnumfont{\chapterNumberFont\chapterNumberSize}
-  \renewcommand\printchapternum{%
-    \chapnumfont\color{chapternum}%
-    \hspace*{\chapterTitleLeftSkip}\thechapter%
-  }
+  \renewcommand\printchapternum{}%
+  % \chapnumfont\color{chapternum}
+  % \hspace*{\chapterTitleLeftSkip}\thechapter%
+  % }
   \setlength{\midchapskip}{2\onelineskip}
-  \renewcommand\afterchapternum{\par\nobreak\vskip \midchapskip}
+  \renewcommand\afterchapternum{}%\par\nobreak\vskip \midchapskip}
   \renewcommand\printchapternonum{}
   \renewcommand\chaptitlefont{\chapterTitleFont\chapterTitleSize}
   \renewcommand*\printchaptertitle[1]{%
-    \raggedright\hspace*{\chapterTitleLeftSkip}%
-    \parbox{\linewidth - \chapterTitleLeftSkip}{%
-      \raggedright\chaptitlefont\color{chaptertitle}%
-      \textls*{\MakeUppercase{##1}}%
-      \ifchapterfootnote%
-        \hspace*{2pt}\theChapterFootnoteMark%
-      \fi%
-      \ifchapterauthor%
-        \vskip 0.5\onelineskip%
-        \chapterAuthorFmt{\theChapterAuthor}%
-        \global\chapterauthorfalse%
-      \fi%
-      \ifchapternote%
-        \vskip 0.5\onelineskip%
-        \chapterNoteFmt{\theChapterNote}%
-        \global\chapternotefalse%
-      \fi%
-    }%
+    \begin{adjustwidth}{.5em}{.5em}%
+      \begin{center}%
+        \chaptitlefont\color{chaptertitle}%
+        \textls*{\MakeUppercase{##1}}%
+        \ifchapterfootnote%
+          \hspace*{2pt}\theChapterFootnoteMark%
+        \fi%
+        \ifchapterauthor%
+          \vskip 0.5\onelineskip%
+          \chapterAuthorFmt{\theChapterAuthor}%
+          \global\chapterauthorfalse%
+        \fi%
+        \ifchapternote%
+          \vskip 0.5\onelineskip%
+          \chapterNoteFmt{\theChapterNote}%
+          \global\chapternotefalse%
+        \fi%
+      \end{center}%
+    \end{adjustwidth}%
     \ifchapterfootnote%
       \theChapterFootnoteText%
       \global\chapterfootnotefalse%
@@ -1614,7 +1652,7 @@ philo-sophical munindo amaravati thai-land}
 
 % === normalsize ===
 
-\def\BOOK@fontSizePt{10.5}
+\def\BOOK@fontSizePt{11}
 \def\BOOK@lineHeightPt{15}
 
 \renewcommand{\normalsize}{%
@@ -1638,8 +1676,11 @@ philo-sophical munindo amaravati thai-land}
 
 % === setup page layout ===
 
-\setlength{\BOOK@paperHeight}{9in}
-\setlength{\BOOK@paperWidth}{6in}
+%\setlength{\BOOK@paperHeight}{9in}
+%\setlength{\BOOK@paperWidth}{6in}
+\setlength{\BOOK@paperHeight}{8in}
+\setlength{\BOOK@paperWidth}{5.25in}
+
 
 \ifshowtrims
   \stockaiv% use A4 paper size to show trims
@@ -1650,20 +1691,10 @@ philo-sophical munindo amaravati thai-land}
   \quarkmarks
   \settrims{0.5\stockheight - 0.5\paperheight}{0.5\stockwidth - 0.5\paperwidth}
   \settrimmedsize{\BOOK@paperHeight}{\BOOK@paperWidth}{*}
-\else
-  \ifprintondemand
-    % 6.125 in x 9.250 in
-    \stockheight=9.25in
-    \stockwidth=6.125in
-    \setlength{\paperheight}{\BOOK@paperHeight}
-    \setlength{\paperwidth}{\BOOK@paperWidth}
-    \settrims{0.5\stockheight - 0.5\paperheight}{0.5\stockwidth - 0.5\paperwidth}
-    \settrimmedsize{\BOOK@paperHeight}{\BOOK@paperWidth}{*}
-  \else\relax
-    \setstocksize{\BOOK@paperHeight}{\BOOK@paperWidth}
-    \settrimmedsize{\stockheight}{\stockwidth}{*}
-    \settrims{0pt}{0pt}
-  \fi
+\else\relax
+  \setstocksize{\BOOK@paperHeight}{\BOOK@paperWidth}
+  \settrimmedsize{\stockheight}{\stockwidth}{*}
+   \settrims{0pt}{0pt}
 \fi
 
 % Text block for 10.5 / 15pt:
@@ -1671,13 +1702,25 @@ philo-sophical munindo amaravati thai-land}
 %\settypeblocksize{34\baselineskip + \topskip}{*}{0.599}% 1/1.667, 3:5, major 6th
 %\setlrmargins{*}{20mm}{*}% 22.71669mm and 19.99976mm
 
-\settypeblocksize{193mm}{110mm}{*}
-\setlrmargins{*}{20mm}{*}
+% Text block for 10.5 / 15pt:
+% \settypeblocksize{29\baselineskip + \topskip}{95mm}{*}
+% \setlrmargins{*}{*}{0.63}% gives: 22.30mm | 14.04mm
+% \setulmargins{*}{*}{1.701}% Tall Pentagon
+% \setlength{\footskip}{55pt}
+% \checkandfixthelayout
+
+% 1. Set the text block to a rigid 27 lines (perfect for 10.5pt/14pt leading)
+\settypeblocksize{29\baselineskip + \topskip}{95mm}{*}
+
+\setlrmargins{*}{17mm}{*} 
+\setulmargins{20mm}{*}{*} 
+
+\setlength{\footskip}{30pt} 
+%\setlength{\headsep}{15pt}
 
 % 42pt was too narrow when printed with Blurb.
-\setulmargins{48pt}{*}{*}% ~17mm, Based on Tall Pentagon, 1.701
+%\setulmargins{48pt}{*}{*}% ~17mm, Based on Tall Pentagon, 1.701
 \setheaderspaces{*}{19pt}{*}
-\setlength{\footskip}{30pt}
 
 % Adjust spacing to avoid warning
 % Class memoir Warning: The material used in the headers is too large (18.0pt) for the given head height (15.6pt),
@@ -1715,7 +1758,7 @@ philo-sophical munindo amaravati thai-land}
 % Sidefootvsep and sidefootheight: 13.6pt and 539.9202pt
 % ******************************************************
 % 
-% 
+%
 % ******************************************************
 % Stock height and width: 228.59732mm by 152.39821mm
 % Top and edge trims: 0mm and 0mm
@@ -1778,9 +1821,13 @@ philo-sophical munindo amaravati thai-land}
 
 % NOTE: add \raggedright to \footnotelayout if you need to disable justified footnote paragraphs.
 
-\renewcommand{\footnotelayout}{\hangpara{\footnotemargin}{1}}
+%\renewcommand{\footnotelayout}{\hangpara{\footnotemargin}{1}}  % all lines indented
+\renewcommand{\footnotelayout}{\hangindent=-\footnotemargin\hangafter=-1}  % first line only indented only
+
+%\renewcommand{\footnotelayout}{}\setlength{\footnotemargin}{0pt}  %hanging footnote, no indentation
 
 % Asterisks for the first three footnotes, then numbers produced by the
 % 'symbol*' option.
-\DefineFNsymbols{anecdote}{*{**}{***}}
+%\DefineFNsymbols{anecdote}{*{**}{***}}
+\DefineFNsymbols{anecdote}{1{2}{3}}
 \setfnsymbol{anecdote}

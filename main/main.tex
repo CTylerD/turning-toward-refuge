@@ -17,12 +17,12 @@
 %% Details of the book
 %% ===================
 
-\title{Prophecy Title}
-\subtitle{Prophecy Subtitle}
-\author{The Author}
-\publisher{The Publisher}
-\date{2017-08-19}
-\editionInfo{\textit{First edition}, printed in TODO Country, 2017}% TODO update edition info
+\title{Turning Toward Refuge}
+\subtitle{Dhamma Reflections by Ajahn Karuṇadhammo}
+\author{Ajahn Karuṇadhammo}
+\publisher{Abhayagiri Buddhist Monastery}
+\date{2026-11-01}
+\editionInfo{\textit{First edition}, printed in the United States of America, 2026}% TODO update edition info
 \ISBN{000-000-0000-00-0}% TODO update ISBN
 
 % === Metadata ===
@@ -63,26 +63,42 @@
 
 \input{./manuscript/tex/titlepage.tex}
 
-\input{./manuscript/tex/copyright.tex}
+%\input{./manuscript/tex/copyright.tex}
 
-\input{./manuscript/tex/dedication.tex}
+%\input{./manuscript/tex/copyright-abm.tex}
+
+\input{./manuscript/tex/copyright-ttr.tex}
+
+% \input{./manuscript/tex/dedication.tex}
 
 \cleartorecto
 \tableofcontents*
+\thispagestyle{empty}
 
+\aliaspagestyle{normalpage}{foreword}
+\aliaspagestyle{chapter}{foreword}
+\pagestyle{foreword}
 \input{./manuscript/tex/foreword.tex}
 
-\input{./manuscript/tex/preface.tex}
+% \input{./manuscript/tex/preface.tex}
 
 % Page 1 is the first page of the first chapter.
 \mainmatter
+\aliaspagestyle{normalpage}{topbottomcentered}
+\aliaspagestyle{chapter}{bottomcenter}
+\pagestyle{normalpage}
 
 \input{./manuscript/tex/01-chapter-one.tex}
 \input{./manuscript/tex/02-chapter-two.tex}
+\input{./manuscript/tex/03-chapter-three.tex}
+\input{./manuscript/tex/04-chapter-four.tex}
+\input{./manuscript/tex/05-chapter-five.tex}
+\input{./manuscript/tex/06-chapter-six.tex}
+\input{./manuscript/tex/07-chapter-seven.tex}
 
 \backmatter
 
-\input{./manuscript/tex/glossary.tex}
+% \input{./manuscript/tex/glossary.tex}
 
 \input{./manuscript/tex/copyright-details.tex}
 

@@ -11,7 +11,7 @@ by The Author
 </div>
 
 <div>
-<p><em>Last updated on: 2026-04-12</em></p>
+<p><em>Last updated on: 2026-09-08</em></p>
 </div>
 
 <!-- Book download links, etc.  -->
