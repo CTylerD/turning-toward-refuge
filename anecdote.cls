@@ -231,7 +231,7 @@
 \newcommand{\footerSize}{\@setfontsize               \footerSize               {10.5}{10.5}}
 \newcommand{\headerSize}{\@setfontsize               \headerSize               {10}{10}}
 
-\newcommand{\smaller}{\@setfontsize\smaller{9}{11}}
+\newcommand{\smaller}{\@setfontsize\smaller{8}{10}}
 
 \newcommand{\copyrightsize}{\@setfontsize\copyrightsize{9}{11}}
 
@@ -337,8 +337,12 @@
 
 \hyphenation{season wisdom develop-ment respon-sible pheno-mena
 philo-sophical munindo amaravati thai-land com-passion ag-gre-gates
-brahma-vihāras straight-forwardness Karuṇa-dhammo Abhaya-giri ig-nor-ance
-re-sul-tant un-created de-te-reio-rat-ing recol-lections}
+brahma-vihāras brahma-vihāra straight-forwardness Karuṇa-dhammo Abhaya-giri
+re-sul-tant un-created de-te-reio-rat-ing recol-lections con-tem-pla-tive
+indi-v-id-uals exter-mination ig-nor-ance matter equa-nimity experi-ence
+deterio-rating circu-latory contin-uity capti-vates impor-tance
+Sāriputta khan-dhas attrac-tive conceptu-ali-zation auto-mati-cally
+process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
 
 %\hyphenation{accur-ately argu-men-ta-tive attach Ayu-dhaya becomes
 %ben-e-fi-cial capa-bil-ity car-ry car-ry-ing cere-monies cere-mony
@@ -1710,17 +1714,19 @@ re-sul-tant un-created de-te-reio-rat-ing recol-lections}
 % \checkandfixthelayout
 
 % 1. Set the text block to a rigid 27 lines (perfect for 10.5pt/14pt leading)
-\settypeblocksize{29\baselineskip + \topskip}{95mm}{*}
+\settypeblocksize{31\baselineskip + \topskip}{95mm}{*}
 
 \setlrmargins{*}{17mm}{*} 
 \setulmargins{20mm}{*}{*} 
+% \setlrmargins{*}{*}{0.63}% gives: 22.30mm | 14.04mm
+% \setulmargins{*}{*}{1.701}% Tall Pentagon
 
-\setlength{\footskip}{30pt} 
 %\setlength{\headsep}{15pt}
 
 % 42pt was too narrow when printed with Blurb.
 %\setulmargins{48pt}{*}{*}% ~17mm, Based on Tall Pentagon, 1.701
 \setheaderspaces{*}{19pt}{*}
+\setlength{\footskip}{20pt} 
 
 % Adjust spacing to avoid warning
 % Class memoir Warning: The material used in the headers is too large (18.0pt) for the given head height (15.6pt),
