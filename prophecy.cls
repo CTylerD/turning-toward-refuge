@@ -343,7 +343,7 @@ philo-sophical munindo amaravati thai-land}
 
 \newcommand{\smaller}{\@setfontsize\smaller{9}{11}}
 
-\newcommand{\copyrightsize}{\@setfontsize\copyrightsize{9}{11}}
+\newcommand{\copyrightsize}{\@setfontsize\copyrightsize{10}{13}}
 
 % === Page Size and Layout ===
 
@@ -1257,7 +1257,7 @@ philo-sophical munindo amaravati thai-land}
     \else
       \centering
     \fi
-    \parbox{\linewidth - \chapterTitleLeftSkip}{%
+    \parbox{\linewidth }{%- \chapterTitleLeftSkip}{%
       \ifchaptertitleleft
         \raggedright
       \else

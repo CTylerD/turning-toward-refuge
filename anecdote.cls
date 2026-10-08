@@ -233,7 +233,7 @@
 
 \newcommand{\smaller}{\@setfontsize\smaller{8}{10}}
 
-\newcommand{\copyrightsize}{\@setfontsize\copyrightsize{9}{11}}
+\newcommand{\copyrightsize}{\@setfontsize\copyrightsize{10}{12}}
 
 % foreign language wrappers
 
@@ -342,7 +342,11 @@ re-sul-tant un-created de-te-reio-rat-ing recol-lections con-tem-pla-tive
 indi-v-id-uals exter-mination ig-nor-ance matter equa-nimity experi-ence
 deterio-rating circu-latory contin-uity capti-vates impor-tance
 Sāriputta khan-dhas attrac-tive conceptu-ali-zation auto-mati-cally
-process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
+process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion
+con-cep-tualization expe-rience con-tem-pla-tive en-vi-ronment re-fresh-ing
+for-ma-tions in-credi-ble per-ma-nence con-di-tioned acqui-si-tions suf-fer-ing
+dif-fi-culty upādāna-kkhan-dhas control assump-tion con-stitu-ents atten-tion
+at-ten-tion}
 
 %\hyphenation{accur-ately argu-men-ta-tive attach Ayu-dhaya becomes
 %ben-e-fi-cial capa-bil-ity car-ry car-ry-ing cere-monies cere-mony
@@ -907,6 +911,24 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
   \createplainmark{glossary}{both}{\glossaryname}
 }
 
+\makepagestyle{bottomcentered}
+\makeevenhead{bottomcentered}{}{\headerFont\headerSize\color{header}\textit{\thetitle}}{}
+\makeevenfoot{bottomcentered}{}{\headerFont\headerSize\color{header}\thepage}{}
+\makeoddhead{bottomcentered}{}{\headerFont\headerSize\color{header}\textit{\leftmark}}{}
+\makeoddfoot{bottomcentered}{}{\headerFont\headerSize\color{header}\thepage}{}
+\makepsmarks{bottomcentered}{%
+  \nouppercaseheads
+  \createmark{chapter}{left}{nonumber}{}{}
+  \createmark{section}{right}{nonumber}{}{}
+  \createplainmark{toc}{both}{\contentsname}
+  \createplainmark{lof}{both}{\listfigurename}
+  \createplainmark{lot}{both}{\listtablename}
+  \createplainmark{bib}{both}{\bibname}
+  \createplainmark{index}{both}{\indexname}
+  \createplainmark{glossary}{both}{\glossaryname}
+}
+
+
 \makepagestyle{bottomcorner}
 \makeevenhead{bottomcorner}{}{}{}
 \makeevenfoot{bottomcorner}{%
@@ -928,17 +950,23 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
   \color{footer}%
   \thepage%
 }{}
-% \makeevenfoot{foreword}{}{%
-%   \footerFont\footerSize%
-%   \color{footer}%
-%   \thepage%
-% }{}
 \makeoddhead{foreword}{}{}{}
 \makeoddfoot{foreword}{}{%
   \footerFont\footerSize%
   \color{footer}%
   \thepage%
 }{}
+
+\makepagestyle{copyright}
+\makeevenhead{copyright}{}{}{}
+\makeevenfoot{copyright}{}{}{}
+% \makeevenfoot{foreword}{}{%
+%   \footerFont\footerSize%
+%   \color{footer}%
+%   \thepage%
+% }{}
+\makeoddhead{copyright}{}{}{}
+\makeoddfoot{copyright}{}{}{}
 
 \makepagestyle{bottomcenter}
 \makeevenhead{bottomcenter}{}{}{}
@@ -988,7 +1016,7 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
   \ifnum #1>\c@tocdepth \else
     %\vskip \z@ \@plus.2\p@
     \vspace*{3pt}
-    {\fontsize{11}{15}\itshape\tocFont\selectfont
+    {\fontsize{12}{16}\itshape\tocFont\selectfont
      \leftskip #2\relax
      \rightskip \@tocrmarg
      \advance\rightskip #3\relax
@@ -1018,7 +1046,7 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
 
 \titlecontents{part}[\tocLeftWidth]
 {\addvspace{25pt}%
-\fontsize{11}{11}\crimsonRomanFont\selectfont}%
+\fontsize{12}{12}\crimsonRomanFont\selectfont}%
 {%
   \contentsmargin{0pt}%
   \thecontentslabel.\space
@@ -1183,7 +1211,7 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
 
 \makechapterstyle{lowtitle}{
   \chapterstyle{default}
-  \setlength{\beforechapskip}{30mm}
+  \setlength{\beforechapskip}{25mm}
   \setlength{\chapterTitleLeftSkip}{0pt} % Set to 0pt for full-width centering
   \renewcommand\printchaptername{}
   \renewcommand\chapternamenum{}
@@ -1197,7 +1225,7 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
   \renewcommand\printchapternonum{}
   \renewcommand\chaptitlefont{\chapterTitleFont\chapterTitleSize}
   \renewcommand*\printchaptertitle[1]{%
-    \begin{adjustwidth}{.5em}{.5em}%
+    \begin{adjustwidth}{-.5em}{-.5em}%
       \begin{center}%
         \chaptitlefont\color{chaptertitle}%
         \textls*{\MakeUppercase{##1}}%
@@ -1656,8 +1684,8 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
 
 % === normalsize ===
 
-\def\BOOK@fontSizePt{11}
-\def\BOOK@lineHeightPt{15}
+\def\BOOK@fontSizePt{12}
+\def\BOOK@lineHeightPt{16}
 
 \renewcommand{\normalsize}{%
   \@setfontsize\normalsize\BOOK@fontSizePt\BOOK@lineHeightPt
@@ -1714,19 +1742,22 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion}
 % \checkandfixthelayout
 
 % 1. Set the text block to a rigid 27 lines (perfect for 10.5pt/14pt leading)
-\settypeblocksize{31\baselineskip + \topskip}{95mm}{*}
+\settypeblocksize{28\baselineskip + \topskip}{95mm}{*}
+
 
 \setlrmargins{*}{17mm}{*} 
-\setulmargins{20mm}{*}{*} 
+\setulmargins{22mm}{*}{*} 
 % \setlrmargins{*}{*}{0.63}% gives: 22.30mm | 14.04mm
 % \setulmargins{*}{*}{1.701}% Tall Pentagon
 
 %\setlength{\headsep}{15pt}
-
 % 42pt was too narrow when printed with Blurb.
 %\setulmargins{48pt}{*}{*}% ~17mm, Based on Tall Pentagon, 1.701
-\setheaderspaces{*}{19pt}{*}
+%---\setheaderspaces{*}{19pt}{*}
+\setheaderspaces{11mm}{*}{*}
 \setlength{\footskip}{20pt} 
+%\setheaderspaces{*}{14pt}{*} % [topmargin to header, headsep, ratio]
+%\setheadfoot{18pt}{24pt}
 
 % Adjust spacing to avoid warning
 % Class memoir Warning: The material used in the headers is too large (18.0pt) for the given head height (15.6pt),
