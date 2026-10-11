@@ -346,7 +346,9 @@ process-es ridic-ulous-ness grati-fica-tion percep-tions percep-tion
 con-cep-tualization expe-rience con-tem-pla-tive en-vi-ronment re-fresh-ing
 for-ma-tions in-credi-ble per-ma-nence con-di-tioned acqui-si-tions suf-fer-ing
 dif-fi-culty upādāna-kkhan-dhas control assump-tion con-stitu-ents atten-tion
-at-ten-tion}
+at-ten-tion mos-qui-tos un-chang-ing a-gi-tat-ed psycho-logical bodily activi-ties
+ending con-tinue feeling ten-den-cies easily concern al-ter-na-tive med-i-ta-tion
+dra-mati-cally chang-ing con-fusion}
 
 %\hyphenation{accur-ately argu-men-ta-tive attach Ayu-dhaya becomes
 %ben-e-fi-cial capa-bil-ity car-ry car-ry-ing cere-monies cere-mony
@@ -1742,11 +1744,10 @@ at-ten-tion}
 % \checkandfixthelayout
 
 % 1. Set the text block to a rigid 27 lines (perfect for 10.5pt/14pt leading)
-\settypeblocksize{28\baselineskip + \topskip}{95mm}{*}
-
+\settypeblocksize{29\baselineskip + \topskip}{95mm}{*}
 
 \setlrmargins{*}{17mm}{*} 
-\setulmargins{22mm}{*}{*} 
+\setulmargins{20mm}{*}{*} 
 % \setlrmargins{*}{*}{0.63}% gives: 22.30mm | 14.04mm
 % \setulmargins{*}{*}{1.701}% Tall Pentagon
 
@@ -1754,7 +1755,7 @@ at-ten-tion}
 % 42pt was too narrow when printed with Blurb.
 %\setulmargins{48pt}{*}{*}% ~17mm, Based on Tall Pentagon, 1.701
 %---\setheaderspaces{*}{19pt}{*}
-\setheaderspaces{11mm}{*}{*}
+\setheaderspaces{10mm}{*}{*}
 \setlength{\footskip}{20pt} 
 %\setheaderspaces{*}{14pt}{*} % [topmargin to header, headsep, ratio]
 %\setheadfoot{18pt}{24pt}
