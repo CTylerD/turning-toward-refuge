@@ -348,7 +348,7 @@ for-ma-tions in-credi-ble per-ma-nence con-di-tioned acqui-si-tions suf-fer-ing
 dif-fi-culty upādāna-kkhan-dhas control assump-tion con-stitu-ents atten-tion
 at-ten-tion mos-qui-tos un-chang-ing a-gi-tat-ed psycho-logical bodily activi-ties
 ending con-tinue feeling ten-den-cies easily concern al-ter-na-tive med-i-ta-tion
-dra-mati-cally chang-ing con-fusion}
+dra-mati-cally chang-ing con-fusion expe-ri-enc-ing ridicu-lous-ness}
 
 %\hyphenation{accur-ately argu-men-ta-tive attach Ayu-dhaya becomes
 %ben-e-fi-cial capa-bil-ity car-ry car-ry-ing cere-monies cere-mony
@@ -1686,8 +1686,8 @@ dra-mati-cally chang-ing con-fusion}
 
 % === normalsize ===
 
-\def\BOOK@fontSizePt{12}
-\def\BOOK@lineHeightPt{16}
+\def\BOOK@fontSizePt{11}
+\def\BOOK@lineHeightPt{15}
 
 \renewcommand{\normalsize}{%
   \@setfontsize\normalsize\BOOK@fontSizePt\BOOK@lineHeightPt
@@ -1744,7 +1744,7 @@ dra-mati-cally chang-ing con-fusion}
 % \checkandfixthelayout
 
 % 1. Set the text block to a rigid 27 lines (perfect for 10.5pt/14pt leading)
-\settypeblocksize{29\baselineskip + \topskip}{95mm}{*}
+\settypeblocksize{31\baselineskip + \topskip}{95mm}{*}
 
 \setlrmargins{*}{17mm}{*} 
 \setulmargins{20mm}{*}{*} 
